@@ -1,0 +1,21 @@
+.descriptionFormField {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 20px;
+}
+
+.descriptionFormField label {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.descriptionFormField p {
+  text-align: justify;
+  word-break: break-word;
+  color: darkgray;
+}

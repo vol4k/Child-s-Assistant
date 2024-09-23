@@ -1,0 +1,274 @@
+.summaryDashboard#dashboard > .block-div {
+  margin: auto;
+}
+
+.summaryDashboard .contentWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  overflow: hidden;
+  filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.summaryDashboard .contentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  margin-inline: 25px;
+}
+
+.summaryDashboard .optionsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  position: absolute;
+  top: 50px;
+  right: 15px;
+}
+
+.optionsBlock .block-div {
+  width: 40px;
+  height: 40px;
+}
+
+.optionsBlock .block-div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.optionsBlock .block-div:active {
+  transform: scale(0.95);
+}
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  gap: 10px;
+  color: gray;
+}
+
+.profileWrapper .profileImage {
+  display: flex;
+  justify-content: center;
+}
+
+.profileWrapper .profileImage .avatar .block-div {
+  height: 350px;
+  width: 350px;
+  border-radius: 50px;
+  cursor: default;
+}
+
+.profileWrapper .profileImage .avatar {
+  .block-div:hover,
+  .block-div:active {
+    transform: scale(1);
+  }
+}
+
+.summaryDashboard .goalWapper {
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.starsWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-block: 20px;
+  text-align: center;
+}
+
+.starsWrapper h1 {
+  margin: 0;
+}
+
+.starsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.starsContainer label {
+  color: gray;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.moneyBagWrapper {
+  position: relative;
+  text-align: center;
+}
+
+.moneyBagWrapper span {
+  font-size: 26px;
+  font-weight: 600;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.moneyBagWrapper img {
+  height: 200px;
+  width: 150px;
+  padding: 30px;
+}
+
+.titleWrapper {
+  position: relative;
+  text-align: center;
+}
+
+.titleWrapper h1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.titleWrapper img {
+  height: 150px;
+  width: 350px;
+  padding: 30px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .titleWrapper h1 {
+    top: 30%;
+  }
+
+  .titleWrapper img {
+    height: 150px;
+    width: 300px;
+    padding: 30px;
+  }
+
+  .summaryDashboard .optionsBlock {
+    top: 35px;
+    right: 10px;
+  }
+  .profileWrapper {
+    font-size: 20px;
+    font-weight: 600;
+    gap: 10px;
+    color: gray;
+  }
+
+  .profileImage .avatar .block-div {
+    height: 250px;
+    width: 250px;
+    border-radius: 50px;
+  }
+
+  .summaryDashboard .contentWrapper h1 {
+    font-size: 24px;
+  }
+
+  .summaryDashboard .goalWapper svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .summaryDashboard .contentContainer {
+    gap: 0;
+  }
+
+  .summaryDashboard .contentWrapper {
+    padding-bottom: 50px;
+  }
+
+  .starsContainer label {
+    font-size: 16px;
+  }
+
+  .moneyBagWrapper span {
+    font-size: 18px;
+    font-weight: 600;
+    top: 60%;
+  }
+
+  .moneyBagWrapper img {
+    height: 150px;
+    width: 100px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .titleWrapper h1 {
+    top: 30%;
+    font-size: 24px;
+  }
+
+  .titleWrapper img {
+    height: 100px;
+    width: 200px;
+    padding: 30px;
+  }
+
+  .summaryDashboard .optionsBlock {
+    top: 35px;
+    right: 10px;
+  }
+  .profileWrapper {
+    font-size: 20px;
+    font-weight: 600;
+    gap: 10px;
+    color: gray;
+  }
+
+  .profileWrapper .profileImage .avatar .block-div {
+    height: 250px;
+    width: 250px;
+  }
+
+  .summaryDashboard .contentWrapper h1 {
+    font-size: 20px;
+  }
+
+  .summaryDashboard .goalWapper svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .summaryDashboard .contentContainer {
+    gap: 0;
+  }
+
+  .summaryDashboard .contentWrapper {
+    padding-bottom: 50px;
+  }
+
+  .starsContainer label {
+    font-size: 16px;
+  }
+
+  .moneyBagWrapper span {
+    font-size: 18px;
+    font-weight: 600;
+    top: 60%;
+  }
+
+  .moneyBagWrapper img {
+    height: 150px;
+    width: 100px;
+    padding: 0;
+  }
+}

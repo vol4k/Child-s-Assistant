@@ -1,0 +1,67 @@
+.parentLogin {
+  animation: fadeIn 0.3s ease-out;
+
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.parentLogin h1 {
+  margin: 0;
+}
+
+.parentLogin .rowWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-block: 25px;
+  gap: 25px;
+}
+
+.parentLogin > .rowWrapper > div > .block-div {
+  width: 350px;
+  max-height: 350px;
+  > img {
+    width: 350px;
+    aspect-ratio: 1;
+  }
+}
+
+.parentIconGrid > .block-div {
+  position: relative;
+}
+
+.parentIconGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.parentIconGrid .labelWrapper {
+  height: min(5dvh, 5dvw);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: min(1dvh, 1dvw);
+  border-radius: min(2.5dvh, 2.5dvw);
+  background-clip: padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parentIconGrid label {
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

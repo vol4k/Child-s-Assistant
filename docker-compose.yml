@@ -1,0 +1,62 @@
+version: '3.8'
+services:
+  db:
+    restart: always
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/pgdata
+    networks:
+      - app_bridge
+
+  server:
+    restart: always
+    build: ./server
+    volumes:
+      - ./server:/server:cached
+      - ./server/store:/server/store:cached
+    depends_on:
+      - db
+    entrypoint: ['flask', 'run', '-h', '0.0.0.0', '-p', '5000']
+    networks:
+      - app_bridge
+
+  client:
+    build: ./client
+    container_name: client_frontend
+    volumes:
+      - ./client:/client:cached
+      - ./client/node_modules:/client/node_modules:cached
+    depends_on:
+      - db
+      - server
+    ports:
+      - 3000:3000
+    networks:
+      - app_bridge
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - server
+      - client
+    networks:
+      - app_bridge
+
+networks:
+  app_bridge:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local
+  store:
+    driver: local

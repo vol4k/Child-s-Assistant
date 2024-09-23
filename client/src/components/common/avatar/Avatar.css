@@ -1,0 +1,60 @@
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
+.avatar label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.avatar .block-div {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  border: 1px solid wheat;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.avatar .block-div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar .block-div:active {
+  transform: scale(0.95);
+}
+
+.avatar.selected .block-div {
+  box-shadow:
+    0 0 10px rgba(255, 215, 0, 0.4),
+    0 0 20px rgba(255, 223, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.avatar .placeholder {
+  aspect-ratio: 1;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px;
+}
+
+.avatar img {
+  width: 100%;
+  display: block;
+}

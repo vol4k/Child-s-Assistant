@@ -1,0 +1,7 @@
+flask
+python-dotenv
+sqlalchemy
+sqlalchemy-utils
+psycopg2
+flask-cors
+APScheduler

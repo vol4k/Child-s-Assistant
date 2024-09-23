@@ -1,0 +1,59 @@
+.inputFormField {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 10px;
+}
+
+.inputFormField label {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.inputFormField input {
+  height: 25px;
+}
+
+.inputFormField input,
+.inputFormField textarea {
+  background: white;
+  border-radius: 25px;
+  padding-block: 5px;
+  padding-inline: 15px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  resize: none;
+  width: 100%;
+  border-width: 0;
+  border-style: inset;
+  border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  overflow: hidden;
+
+  box-shadow: 0.3px 0.5px 0.7px rgba(62, 74, 97, 0.1),
+    0.8px 1.6px 2px -0.8px rgba(62, 74, 97, 0.1),
+    2.1px 4.1px 5.2px -1.7px rgba(62, 74, 97, 0.1),
+    5px 10px 12.6px -2.5px rgba(62, 74, 97, 0.1);
+
+  transition: all 0.3s;
+}
+
+.inputFormField input::placeholder,
+.inputFormField textarea::placeholder {
+  text-align: center;
+}
+
+.inputFormField input:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.inputFormField input:active {
+  transform: scale(0.99);
+}

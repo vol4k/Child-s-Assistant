@@ -1,0 +1,154 @@
+.todo-post {
+  margin-block: 5px;
+  transition: all 0.3s;
+}
+
+.todo-post > .block-div {
+  align-items: start;
+  padding: 10px;
+  margin-inline: 10px;
+  width: calc(768px - 20px - 250px);
+}
+
+.todo-post .post-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.todo-post .optionsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.todo-post .block-div:hover {
+  .task-labels {
+    .task-revard {
+      color: goldenrod;
+    }
+  }
+  .task-assignment,
+  .task-revard,
+  .task-date,
+  .task-type {
+    color: goldenrod;
+  }
+  transform: scale(1.01);
+
+  .optionsBlock .block-div svg {
+    transform: rotate(360deg);
+  }
+}
+
+.todo-post.checked>.block-div {
+  opacity: 0.5;
+}
+
+.todo-post.checked>.block-div:hover {
+  opacity: 1;
+}
+
+.todo-post .block-div .optionsBlock .block-div svg {
+  transition: all 0.3s ease-in-out;
+}
+
+.todo-post .block-div .optionsBlock .block-div:active {
+  transform: scale(1.25);
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.post-header .avatar .block-div {
+  width: 50px;
+  height: 50px;
+  margin-left: 0;
+}
+
+.post-header .task-labels {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  gap: 0;
+
+  transition: all 0.3s;
+}
+
+.post-content .task-image-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 200px;
+}
+
+.post-content img {
+  height: 200px;
+  border-radius: 25px;
+}
+
+.post-content .task-labels {
+  display: flex;
+  flex-direction: column;
+
+  .task-title {
+    font-size: 24px;
+    transition: all 0.3s;
+  }
+}
+
+.post-content {
+  .task-assignment,
+  .task-revard,
+  .task-date,
+  .task-type {
+    font-size: 16px;
+    color: gray;
+    padding-inline: 3px;
+  }
+
+  .task-type {
+    padding-inline: 0px;
+  }
+}
+
+.description {
+  margin-block: 10px;
+}
+
+.description label {
+  font-size: 16px;
+  margin: 0;
+}
+
+.description p {
+  margin-block: 5px;
+  font-size: 16px;
+  text-align: justify;
+  color: gray;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 1440px) {
+  .todo-post > .block-div {
+    width: 30dvw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .todo-post > .block-div {
+    width: calc(90dvw - 20px);
+  }
+}

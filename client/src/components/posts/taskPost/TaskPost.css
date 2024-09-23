@@ -1,0 +1,64 @@
+.task-post {
+  margin-block: 5px;
+  transition: all 0.3s;
+}
+
+.task-post > .block-div {
+  align-items: start;
+  padding: 10px;
+  margin-inline: 10px;
+  width: calc(768px - 20px - 250px);
+}
+
+.task-post .post-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.task-post .optionsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.optionsBlock .block-div {
+  width: 30px;
+  height: 30px;
+}
+
+.optionsBlock .block-div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.optionsBlock .block-div:active {
+  transform: scale(0.95);
+}
+
+@keyframes hideAnim {
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes showAnim {
+  0% {
+    height: 0;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .task-post > .block-div {
+    width: 30dvw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .task-post > .block-div {
+    width: calc(90dvw - 20px);
+  }
+}

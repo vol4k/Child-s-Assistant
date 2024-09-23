@@ -1,0 +1,72 @@
+.choosingPage {
+  animation: fadeIn 0.5s ease-out;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.choosingGrid > .block-div {
+  position: relative;
+}
+
+.choosingGrid {
+  display: flex;
+  flex-direction: row;
+  gap: min(5dvh, 5dvw);
+  justify-content: center;
+}
+
+.choosingGrid img {
+  z-index: 1;
+  width: min(40dvh, 40dvw);
+}
+
+.choosingGrid .labelWrapper {
+  height: min(5dvh, 5dvw);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: min(1dvh, 1dvw);
+  border-radius: min(2.5dvh, 2.5dvw);
+  background-clip: padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choosingGrid label {
+  color: white;
+}
+
+.choosingGrid > .block-div:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0.5px 1px 1.2px rgba(62, 74, 97, 0.2),
+    1px 2px 2.5px -1px rgba(62, 74, 97, 0.2),
+    3px 6px 7px -2px rgba(62, 74, 97, 0.2),
+    6px 12px 15px -3px rgba(62, 74, 97, 0.2);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.choosingGrid > .block-div:active {
+  background-color: #e0e0e0;
+  box-shadow: 0.2px 0.4px 0.5px rgba(62, 74, 97, 0.2),
+    0.5px 1px 1.5px -0.5px rgba(62, 74, 97, 0.2),
+    1.5px 3px 4px -1px rgba(62, 74, 97, 0.2),
+    3px 6px 8px -1.5px rgba(62, 74, 97, 0.2);
+  transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

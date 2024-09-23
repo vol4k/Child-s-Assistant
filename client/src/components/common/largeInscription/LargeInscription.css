@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'LargeInscription';
+  src: local('KidDrawsFontRegular-3g3L'),
+    url('fonts/KidDrawsFontRegular-3g3L.ttf') format('truetype');
+}
+
+.largeInscription {
+  font-family: 'LargeInscription';
+  font-size: 1rem;
+  text-align: center;
+  justify-self: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .largeInscription {
+    font-size: 0.75rem;
+  }
+}

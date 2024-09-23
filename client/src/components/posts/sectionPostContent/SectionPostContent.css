@@ -1,0 +1,29 @@
+.post-header {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.post-header .section-labels {
+  display: flex;
+  flex-direction: column;
+  margin-block: 15px;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+.section-labels span {
+  color: darkgray;
+}
+
+
+.section-post > .block-div:hover {
+  .post-header .section-labels {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .section-labels span {
+    color: goldenrod;
+  }
+}

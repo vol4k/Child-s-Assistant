@@ -1,0 +1,116 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: min(50dvh, 50dvw);
+}
+
+.modalContainer .carousel {
+  width: 100%;
+  height: 50dvh;
+  padding-inline: 10px;
+  padding-block: 20px;
+  gap: 10px;
+}
+
+.modalContent {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.modalContent .scrollIcon {
+  display: flex;
+  position: absolute;
+  border-radius: 50px;
+  padding: 5px;
+  backdrop-filter: blur(1px);
+  top: 15px;
+  right: 15px;
+  animation: bounce-in 10s infinite ease;
+}
+
+.modalButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  padding-inline: 10px;
+}
+
+.modalButtons button {
+  background-color: lightslategray;
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 7px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modalButtons button:hover {
+  background-color: gray;
+}
+
+.modalButtons button:active {
+  background-color: darkslategray;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modalButtons button[type='submit'] {
+  background-color: lightblue;
+}
+
+.modalButtons button[type='submit']:hover {
+  background-color: deepskyblue;
+}
+
+.modalButtons button[type='submit']:active {
+  background-color: dodgerblue;
+}
+
+@media screen and (max-width: 480px) {
+  .base {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .modalContainer {
+    width: 70dvw;
+  }
+
+  .modalButtons {
+    flex-direction: column-reverse;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  15% {
+    transform: scale(0.9);
+  }
+  20% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

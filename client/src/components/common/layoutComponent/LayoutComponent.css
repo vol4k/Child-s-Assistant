@@ -1,0 +1,17 @@
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  align-items: center;
+  justify-content: start;
+  min-height: 100dvh;
+  background-color: #f0f4f8;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

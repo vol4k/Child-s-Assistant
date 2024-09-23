@@ -1,0 +1,80 @@
+.multiSelectField {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 10px;
+}
+
+.multiSelectField .searchWrapper {
+  transition: all 0.3s ease;
+}
+
+.multiSelectField label {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.multiSelect .searchWrapper {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  flex-wrap: wrap;
+  padding-block: 5px;
+  padding-inline: 10px;
+  border-radius: 25px;
+  border-width: 0;
+  border-style: inset;
+  border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+
+  box-shadow:
+  0.3px 0.5px 0.7px rgba(62, 74, 97, 0.1),
+  0.8px 1.6px 2px -0.8px rgba(62, 74, 97, 0.1),
+  2.1px 4.1px 5.2px -1.7px rgba(62, 74, 97, 0.1),
+  5px 10px 12.6px -2.5px rgba(62, 74, 97, 0.1);
+}
+
+.multiSelect div {
+  border-radius: 10px;
+}
+
+.multiSelect div ul {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.multiSelect div li {
+  padding-block: 5px;
+}
+
+.multiSelect div input {
+  margin: 0;
+  width: 100%;
+  margin-inline: 2px;
+}
+
+.multiSelect div input::placeholder {
+  text-align: center;
+}
+
+.multiSelect span {
+  border-radius: 25px;
+  margin: 2px;
+  line-height: 0px;
+}
+
+.multiSelect .optionListContainer {
+  position: relative;
+}
+
+.multiSelectField .searchWrapper:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.multiSelectField .searchWrapper:active {
+  transform: scale(0.99);
+}

@@ -1,0 +1,46 @@
+.carousel-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: calc(768px - 220px);
+}
+
+.carousel {
+  display: flex;
+  padding-block: 10px;
+  transition: transform 0.3s ease-in-out;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.dir-horizontal {
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.dir-vertical {
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.just-start {
+  justify-content: start;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.just-end {
+  justify-content: end;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    max-width: calc(95dvw - 20px);
+  }
+}

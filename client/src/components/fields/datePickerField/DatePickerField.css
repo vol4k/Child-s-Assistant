@@ -1,0 +1,44 @@
+.datePikerField {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 10px;
+}
+
+.datePikerField label {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.datePikerField .block-div {
+  width: 100%;
+}
+
+.datePikerField button {
+  height: 25px;
+  width: 100%;
+  background: transparent;
+  border-color: transparent;
+  text-align: start;
+  padding-inline: 15px;
+
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.datePikerField span {
+  color: #777;
+}
+
+.datePikerField .block-div:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.datePikerField .block-div:active {
+  transform: scale(0.99);
+}

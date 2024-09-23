@@ -1,0 +1,28 @@
+html,
+body,
+div#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  font-family: 'Roboto', sans-serif;
+
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+}
+
+.empty_label {
+  display: block;
+  padding-inline: 10px;
+  text-align: center;
+  justify-self: center;
+  color: gray;
+}

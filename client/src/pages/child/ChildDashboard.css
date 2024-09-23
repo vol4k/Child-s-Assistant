@@ -1,0 +1,127 @@
+.childDashboard {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  margin-block: 25px;
+  margin-inline: 50px;
+  gap: 50px;
+}
+
+.childDashboard .primary-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.primary-content .summaryDashboard {
+  display: none;
+}
+
+.primary-content .settings-dashboard {
+  display: none;
+}
+
+.primary-content .summaryDashboard > .block-div {
+  align-items: start;
+  padding: 10px;
+  cursor: pointer;
+  margin-inline: 0px;
+  width: calc(768px - 20px - 250px);
+}
+
+.secondary-content .block-div {
+  display: flex;
+  width: calc(80dvw - (768px - 220px));
+  max-width: 1200px;
+}
+
+.post-date {
+  padding: 10px;
+  color: #696969;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tablist {
+  display: flex;
+  justify-self: center;
+  list-style-type: none;
+  padding-inline: 0;
+  margin: 0;
+  width: 800px;
+  margin-top: 1rem;
+  border-radius: 25px;
+  background: whitesmoke;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  text-align: center;
+}
+
+.tablist li {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.2s;
+}
+
+.selectedTab {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .react-tabs__tab-panel {
+    width: 100dvw;
+  }
+
+  .childDashboard,
+  .summaryDashboard {
+    justify-content: space-around;
+    margin-inline: 10px;
+    gap: 5px;
+    
+  }
+
+  .secondary-content .block-div  {
+    width: 60dvw;
+  }
+
+  .tablist {
+    width: calc(768px - 20px - 250px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .childDashboard {
+    flex-direction: column;
+    margin-inline: 0;
+  }
+  .secondary-content {
+    display: none;
+  }
+
+  .primary-content .summaryDashboard {
+    display: flex;
+  }
+
+  .primary-content .settings-dashboard {
+    display: flex;
+  }
+
+  .tablist {
+    width: calc(90dvw - 20px);
+  }
+
+  .primary-content .summaryDashboard > .block-div {
+    width: calc(90dvw - 20px);
+  }
+}

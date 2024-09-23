@@ -1,0 +1,82 @@
+.childLogin {
+  animation: fadeIn 0.5s ease-out;
+
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.childLogin h1 {
+  margin: 0;
+}
+
+.childLogin .rowWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-block: 25px;
+  gap: 25px;
+}
+
+.childLogin > .rowWrapper > div > .block-div {
+  width: 350px;
+  max-height: 350px;
+  > img {
+    width: 350px;
+    aspect-ratio: 1;
+  }
+}
+
+.childIconGrid > .block-div {
+  position: relative;
+  width: min(50dvh, 100dvw);
+}
+
+.childIconGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.childIconGrid .labelWrapper {
+  height: min(5dvh, 5dvw);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: min(1dvh, 1dvw);
+  border-radius: min(2.5dvh, 2.5dvw);
+  background-clip: padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.childIconGrid label {
+  color: white;
+}
+
+.childLogin .choose-wrapper .carousel-container {
+  width: min(50dvh, 100dvw);
+}
+
+.childLogin .choose-wrapper .carousel {
+  padding-inline: 15px;
+}
+
+.childLogin .choose-wrapper > .block-div {
+  display: flex;
+  flex-direction: column;
+  padding-block: 15px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
