@@ -22,7 +22,7 @@ import {
   WeekStartSettingsSheme,
   WeekStartType,
 } from 'components/common/formField/formField'
-import Carousel, {Justify} from 'components/common/сarousel/Сarousel'
+import Carousel, {Justify} from 'components/common/carousel/Carousel'
 import ModalComponent from 'components/modalComponent/ModalComponent'
 import SectionPost from 'components/posts/sectionPost/SectionPost'
 

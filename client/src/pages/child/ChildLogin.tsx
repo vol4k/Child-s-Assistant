@@ -5,7 +5,7 @@ import LargeInscription from 'components/common/largeInscription/LargeInscriptio
 import {useNavigate} from 'react-router-dom'
 import Block from 'components/common/block/Block'
 import BackButton from 'components/backButton/BackButton'
-import Carousel, {Direction, Justify} from 'components/common/сarousel/Сarousel'
+import Carousel, {Direction, Justify} from 'components/common/carousel/Carousel'
 import Avatar, {AvatarProps} from 'components/common/avatar/Avatar'
 import {useEffect, useState} from 'react'
 import {ChildProfileDataListType} from 'components/common/formField/formField'

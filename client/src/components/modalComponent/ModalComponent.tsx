@@ -1,7 +1,11 @@
 import './ModalComponent.css'
 import Modal from 'react-modal'
 import 'react-datepicker/dist/react-datepicker.css'
-import Carousel, {Direction, Justify} from 'components/common/сarousel/Сarousel'
+import Carousel, {
+  Direction,
+  Justify,
+  ScrollVisibility,
+} from 'components/common/carousel/Carousel'
 import InputField from 'components/fields/inputField/InputField'
 import MultiselectField from 'components/fields/multiselectField/MultiselectField'
 import ImageUploadingField from 'components/fields/imageUploadingField/ImageUploadingField'
@@ -130,7 +134,11 @@ export default function ModalComponent(props: {
     }, [])
 
     return (
-      <Carousel direction={Direction.vertical} justify={Justify.start}>
+      <Carousel
+        direction={Direction.vertical}
+        justify={Justify.start}
+        scrollVisibility={ScrollVisibility.visible}
+      >
         <>{formFields}</>
       </Carousel>
     )

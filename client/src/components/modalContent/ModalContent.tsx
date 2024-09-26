@@ -1,7 +1,6 @@
 import './ModalContent.css'
 
-import {FormEvent, useEffect} from 'react'
-import {PiMouseScroll} from 'react-icons/pi'
+import {FormEvent} from 'react'
 
 interface ModalContentProps {
   title: string
@@ -33,7 +32,6 @@ export default function ModalContent({
       <form className='modalContent' onSubmit={onSubmit} onReset={onCancel}>
         <FormFields />
         <ModalButtons />
-        <PiMouseScroll size={22} className='scrollIcon' />
       </form>
     </div>
   )

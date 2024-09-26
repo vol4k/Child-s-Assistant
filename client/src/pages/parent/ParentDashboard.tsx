@@ -4,7 +4,7 @@ import Child from 'images/child.png'
 import TaskImage from 'images/task.png'
 
 import LargePost from 'components/posts/largePost/LargePost'
-import Carousel, {Direction, Justify} from 'components/common/сarousel/Сarousel'
+import Carousel, {Direction, Justify} from 'components/common/carousel/Carousel'
 import Avatar, {AvatarProps} from 'components/common/avatar/Avatar'
 import BackButton from 'components/backButton/BackButton'
 import SummaryDashboard from 'components/summaryDashboard/SummaryDashboard'

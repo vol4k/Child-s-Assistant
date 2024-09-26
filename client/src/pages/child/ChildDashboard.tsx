@@ -1,7 +1,7 @@
 import {Tab, TabList, TabPanel, Tabs} from 'react-tabs'
 import './ChildDashboard.css'
 import BackButton from 'components/backButton/BackButton'
-import Carousel, {Direction} from 'components/common/сarousel/Сarousel'
+import Carousel, {Direction} from 'components/common/carousel/Carousel'
 import SummaryDashboard from 'components/summaryDashboard/SummaryDashboard'
 import ToDoPost from 'components/posts/toDoPost/ToDoPost'
 import {useParams} from 'react-router-dom'
