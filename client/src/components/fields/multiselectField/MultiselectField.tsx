@@ -34,6 +34,7 @@ export default function MultiselectField({
     <div className='multiSelectField'>
       <label>{label}</label>
       <Multiselect
+        id={label}
         singleSelect={singleSelect}
         className='multiSelect'
         placeholder='Select here...'

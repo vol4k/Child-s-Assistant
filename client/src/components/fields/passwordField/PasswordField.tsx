@@ -13,6 +13,7 @@ type Props = {
 export default function PasswordField({onSubmit, onReset}: Props) {
   const [showPassword, setShowPassword] = useState(false)
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
@@ -20,6 +21,7 @@ export default function PasswordField({onSubmit, onReset}: Props) {
 
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (error) return
     if (onSubmit) onSubmit(password)
   }
 
