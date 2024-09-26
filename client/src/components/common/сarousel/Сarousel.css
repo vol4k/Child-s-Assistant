@@ -39,8 +39,8 @@
   justify-content: end;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
   .carousel-container {
-    max-width: calc(95dvw - 20px);
+    max-width: 100dvw;
   }
 }
