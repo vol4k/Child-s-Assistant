@@ -42,4 +42,4 @@ def add_or_update_section():
 def delete_section():
     data = request.json
     uuid = data.get('uuid')
-    store.delete_section(uuid)
+    return jsonify({'stauts': store.delete_section(uuid)})

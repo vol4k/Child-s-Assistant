@@ -7,7 +7,7 @@ import './Avatar.css'
 export type AvatarProps = {
   uuid: string
   name: string
-  sex?: string
+  sex_uuid?: string
   image?: string
   showLabel?: boolean
   isSelected?: boolean
@@ -17,11 +17,11 @@ export type AvatarProps = {
 export default function Avatar(props: AvatarProps) {
   const AvatarPicture = () => {
     let src
-    switch (props.sex) {
-      case 'Boy':
+    switch (props.sex_uuid) {
+      case 'sex-boy':
         src = Boy
         break
-      case 'Girl':
+      case 'sex-girl':
         src = Girl
         break
       default:

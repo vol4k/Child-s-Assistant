@@ -1,7 +1,6 @@
 import './ParentLogin.css'
 import parent from 'images/parent.png'
 
-import {useNavigate} from 'react-router-dom'
 import Block from 'components/common/block/Block'
 import PasswordField from 'components/fields/passwordField/PasswordField'
 import BackButton from 'components/backButton/BackButton'
@@ -18,7 +17,6 @@ import {
 import {
   checkAnswer,
   checkParentUserIsExist,
-  checkPassword,
   getSecurityQuestion,
   updateCred,
   updatePassword,
@@ -27,8 +25,6 @@ import {
 export default function ParentLogin(props: {
   setAuthState: Dispatch<React.SetStateAction<boolean>>
 }) {
-  const nav = useNavigate()
-
   const [secretQuestion, setSecretQuestion] = useState<string>('')
   const [setupFormModal, setSetupFormModal] = useState<boolean>(false)
   const [resetFormModal, setResetFormModal] = useState<boolean>(false)
@@ -56,13 +52,6 @@ export default function ParentLogin(props: {
         setSetupFormModal(!res)
         getSecurityQuestion().then((sec_q: string) => setSecretQuestion(sec_q))
       })
-    })
-  }
-
-  const tryAuth = (password: string) => {
-    checkPassword(password).then((success: boolean) => {
-      props.setAuthState(success)
-      if (success) nav('/parent/dashboard')
     })
   }
 
@@ -114,7 +103,7 @@ export default function ParentLogin(props: {
           onSubmitEvent={tryUpdatePassword}
         />
         <PasswordField
-          onSubmit={tryAuth}
+          setAuthState={props.setAuthState}
           onReset={() => setResetFormModal(!resetFormModal)}
         />
       </div>

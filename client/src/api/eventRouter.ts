@@ -15,7 +15,7 @@ export type EventRest = {
   uuid: string
   child_profile_uuid: string
   task_uuid: string
-  date: string
+  date?: string
 }
 function getAllEventsWithFilters(filters?: {
   child_profile_uuid?: string

@@ -31,7 +31,7 @@ class Task(Base):
             "section_uuid": self.section_uuid,
             "revard": self.revard,
             "repeat": self.repeat,
-            "start_date": self.start_date.isoformat(),
+            "start_date": self.start_date.isoformat() if self.start_date else None,
             "image_uuid": self.image_uuid,
             "description": self.description,
         }

@@ -21,7 +21,7 @@ class Event(Base):
             "uuid": self.uuid,
             "child_profile_uuid": self.child_profile_uuid,
             "task_uuid": self.task_uuid,
-            "date": self.date.isoformat(),
+            "date": self.date.isoformat() if self.date else None,
         }
 
         return obj

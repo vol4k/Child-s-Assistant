@@ -22,7 +22,7 @@ class ChildProfile(Base):
         obj = {
             "uuid": self.uuid,
             "name": self.name,
-            "birthday": self.birthday.isoformat(),
+            "birthday": self.birthday.isoformat() if self.birthday else None,
             "sex": self.sex,
             "image_uuid": self.image_uuid
         }

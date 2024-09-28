@@ -27,7 +27,6 @@ import {
   StatisticDataType,
   StatisticDataTypePair,
 } from 'api/childProfileRouter'
-import {profile} from 'console'
 
 type ModalProps = {
   selectedProfileUUID?: string
@@ -185,9 +184,9 @@ export default function SummaryDashboard(props: {
             <Avatar
               uuid={props.profile.uuid}
               name={props.profile.Name ?? ''}
-              sex={
+              sex_uuid={
                 props.profile.Sex.at(0)
-                  ? props.profile.Sex.at(0)!.name
+                  ? props.profile.Sex.at(0)!.uuid
                   : undefined
               }
               image={props.profile['Photo']?.dataURL}

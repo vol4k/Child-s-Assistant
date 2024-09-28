@@ -184,7 +184,7 @@ export default function ParentDashboard() {
     if (tasks.length !== 0)
       return (
         <>
-          {tasks.map((taskProps, i) => (
+          {tasks.map((taskProps) => (
             <TaskPost
               key={taskProps.uuid}
               sections={sections}

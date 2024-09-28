@@ -99,7 +99,9 @@ function checkPassword(password: string): Promise<boolean> {
     body: JSON.stringify({password: password}),
   }
 
-  return makeRequest(endpoint, options).then((res) => res.status)
+  return makeRequest(endpoint, options)
+    .then((res) => res.status)
+    .catch((res) => false)
 }
 
 type ResetRest = {

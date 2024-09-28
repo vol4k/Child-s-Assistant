@@ -11,7 +11,7 @@ const SERVER_ADDRESS = `http://${window.location.hostname}/api`
 export type ChildProfileRest = {
   uuid: string
   name: string
-  birthday: string
+  birthday?: string
   sex?: string
   image_uuid: string
 }
@@ -22,7 +22,7 @@ export function convertChildProfileRestToChildProfileDataType(
   return {
     uuid: profile.uuid,
     Name: profile.name,
-    Birthday: profile.birthday !== '' ? new Date(profile.birthday) : undefined,
+    Birthday: profile.birthday ? new Date(profile.birthday) : undefined,
     Sex: [{uuid: profile.sex}],
     Photo:
       profile.image_uuid !== ''
@@ -77,7 +77,9 @@ function convertChildProfileDataTypeToChildProfileRest(
   return {
     uuid: profile.uuid,
     name: profile.Name,
-    birthday: profile.Birthday ? convertISOtoLocaleISO(profile.Birthday) : '',
+    birthday: profile.Birthday
+      ? convertISOtoLocaleISO(profile.Birthday)
+      : undefined,
     sex: sex ? sex.uuid : undefined,
     image_uuid: profile.image_uuid ?? '',
   }
@@ -221,7 +223,7 @@ function getStatistic(uuid: string): Promise<StatisticDataTypePair> {
 function getFullStatistic(): Promise<StatisticDataTypePair> {
   return getChildren()
     .then((children) => {
-      return Promise.all(children.map((child) => getStatistic(child.uuid)));
+      return Promise.all(children.map((child) => getStatistic(child.uuid)))
     })
     .then((stats: StatisticDataTypePair[]) => {
       const accumulatedStats = stats.reduce(
@@ -230,19 +232,31 @@ function getFullStatistic(): Promise<StatisticDataTypePair> {
           currentValue: StatisticDataTypePair
         ) => {
           return {
-            today: accumulateStatisticDataType(accumulator.today, currentValue.today),
-            week: accumulateStatisticDataType(accumulator.week, currentValue.week),
-          };
+            today: accumulateStatisticDataType(
+              accumulator.today,
+              currentValue.today
+            ),
+            week: accumulateStatisticDataType(
+              accumulator.week,
+              currentValue.week
+            ),
+          }
         },
         {
-          today: { stars: [], total_earned: 0 },
-          week: { stars: [], total_earned: 0 }, 
+          today: {stars: [], total_earned: 0},
+          week: {stars: [], total_earned: 0},
         }
-      );
-      
-      return accumulatedStats;
+      )
+
+      return accumulatedStats
     })
 }
 
-
-export {getChildren, getChild, addOrUpdateChild, deleteChild, getStatistic, getFullStatistic}
+export {
+  getChildren,
+  getChild,
+  addOrUpdateChild,
+  deleteChild,
+  getStatistic,
+  getFullStatistic,
+}

@@ -12,7 +12,7 @@ export type TaskDataRest = {
   section_uuid?: string
   revard: string
   repeat?: string
-  start_date: string
+  start_date?: string
   image_uuid: string
   description: string
   child_uuids: (string | undefined)[]
@@ -32,7 +32,7 @@ function convertTaskDataTypeToTaskDataRest(
     repeat: repeat ? repeat.uuid : undefined,
     start_date: formField['Start date']
       ? convertISOtoLocaleISO(formField['Start date'])
-      : '',
+      : undefined,
     image_uuid: formField.image_uuid ?? '',
     description: formField.Description,
     child_uuids: formField['Assigned to'].map((assignment) => assignment.uuid),
@@ -89,8 +89,9 @@ export function convertTaskDataRestToTaskDataType(
       return {uuid: uuid}
     }),
     Description: response.description,
-    'Start date':
-      response.start_date !== '' ? new Date(response.start_date) : undefined,
+    'Start date': response.start_date
+      ? new Date(response.start_date)
+      : undefined,
   }
 }
 function convertTaskDataRestListToTaskDataTypeList(
@@ -127,6 +128,8 @@ function getTasksWithFilters(filters?: {
     },
     body: bodyEntry,
   }
+
+  console.log(bodyEntry)
 
   return makeRequest(endpoint, options).then((response: TaskDataRestList) =>
     convertTaskDataRestListToTaskDataTypeList(response)

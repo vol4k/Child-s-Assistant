@@ -3,9 +3,25 @@ import './InputField.css'
 
 export enum InputFieldType {
   input,
+  number,
   textarea,
   time,
   password,
+}
+
+export namespace Validator {
+  export type ValidatorType = (value: string) => string
+  export const validator = (validators: ValidatorType[]): ValidatorType => {
+    return (value: string): string => {
+      return validators.map((validator) => validator(value)).join('\n')
+    }
+  }
+}
+
+export namespace ValidateInputField {
+  export const notEmpty = (value: string): string => {
+    return value.length ? '' : 'Field must be not empty'
+  }
 }
 
 interface InputFieldProps {
@@ -37,6 +53,18 @@ const Input = ({label, type, initalValue, onChange}: InputFieldProps) => {
           ref={inputRef}
           key={`input-${label}`}
           type='input'
+          value={inputValue}
+          onChange={onChangeHandler}
+          placeholder={`Enter the ${label.toLowerCase()} value`}
+        />
+      )
+
+    case InputFieldType.number:
+      return (
+        <input
+          ref={inputRef}
+          key={`input-${label}`}
+          type='number'
           value={inputValue}
           onChange={onChangeHandler}
           placeholder={`Enter the ${label.toLowerCase()} value`}

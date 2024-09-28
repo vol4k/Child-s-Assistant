@@ -658,7 +658,7 @@ class Store:
     ):
         session = self.Session()
         try:
-            query = session.query(Task).join(
+            query = session.query(Task).outerjoin(
                 Assignment, Task.uuid == Assignment.task_uuid
             )
 

@@ -120,6 +120,20 @@
   animation: hideAnim 0.3s ease-in-out forwards;
 }
 
+.post.secondary .block-div {
+  opacity: 0.75;
+}
+
+.post.secondary .block-div:hover {
+  opacity: 1;
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post.secondary.clickable .block-div:active {
+  transform: scale(0.99);
+}
+
 @keyframes hideAnim {
   100% {
     height: 0;

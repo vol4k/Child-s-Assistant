@@ -234,7 +234,7 @@ const NewTaskSheme = (
         or enter the amount the child will earn for completing the task, \
         for example, 2.50 will mean $2.50.'
       ),
-      inputField('Revard', InputFieldType.input, ''),
+      inputField('Revard', InputFieldType.number, ''),
       inputField('Description', InputFieldType.textarea, ''),
       dateField('Start date', null),
       multiselectField(
@@ -296,7 +296,7 @@ const EditTaskSheme = (
           'About Revards',
           'You can leave the Reward field empty for the task to be worth 1✩, or enter the amount the child will earn for completing the task, for example, 2.50 will mean $2.50.'
         ),
-        inputField('Revard', InputFieldType.input, props.Revard),
+        inputField('Revard', InputFieldType.number, props.Revard),
         inputField('Description', InputFieldType.textarea, props.Description),
         dateField('Start date', props['Start date'] ? new Date() : undefined),
         multiselectField(
@@ -478,8 +478,8 @@ const NewSectionSheme = () => {
     content: [
       invisibleField('uuid', uuidv4()),
       inputField('Title', InputFieldType.input, ''),
-      inputField('Start time', InputFieldType.time, 'appt=00:00'),
-      inputField('End time', InputFieldType.time, 'appt=00:00'),
+      inputField('Start time', InputFieldType.time, '12:00'),
+      inputField('End time', InputFieldType.time, '12:00'),
     ],
   }
 }
