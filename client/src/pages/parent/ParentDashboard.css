@@ -104,7 +104,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .parentDashboard {
     flex-direction: column;
     margin-inline: 0;

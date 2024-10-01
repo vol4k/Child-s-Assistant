@@ -1,4 +1,6 @@
 .section-post {
+  display: flex;
+  justify-content: center;
   margin-block: 5px;
 }
 
@@ -28,8 +30,9 @@
   padding: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .section-post > .block-div {
     width: calc(90dvw - 20px);
+    align-self: center;
   }
 }

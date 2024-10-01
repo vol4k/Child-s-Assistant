@@ -147,7 +147,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .todo-post > .block-div {
     width: calc(90dvw - 20px);
   }

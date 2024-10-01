@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: calc(768px - 220px);
 }
 
 .carousel {
@@ -43,7 +42,7 @@
   justify-content: end;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1000px) {
   .carousel-container {
     max-width: 100dvw;
   }

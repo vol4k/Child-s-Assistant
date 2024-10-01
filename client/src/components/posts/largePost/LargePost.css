@@ -152,7 +152,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .post > .block-div {
     width: calc(90dvw - 20px);
   }
