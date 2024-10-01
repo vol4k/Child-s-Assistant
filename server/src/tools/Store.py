@@ -407,21 +407,21 @@ class Store:
                 sections = session.query(Section).all()
 
                 for section in sections:
-                    earned_stars = session.query(Event).filter(
+                    earned_stars_query = session.query(Event).filter(
                         Event.task_uuid.in_(
                             star_tasks.with_entities(Task.uuid).filter(
                                 Task.section_uuid == section.uuid
                             )
                         ),
                         func.date(Event.date) == current_date.date()
-                    ).count()
+                    )
 
-                    total_stars = session.query(Assignment).join(Task, Assignment.task_uuid == Task.uuid).filter(
+                    total_stars_query = session.query(Assignment).join(Task, Assignment.task_uuid == Task.uuid).filter(
                         Task.section_uuid == section.uuid,
                         Task.revard == '',
                         Task.start_date >= current_date,
                         Task.start_date < current_date + timedelta(days=1)
-                    ).count()
+                    )
 
                     total_earned_query = session.query(
                         func.coalesce(
@@ -437,10 +437,16 @@ class Store:
                     )
 
                     if uuid:
+                        earned_stars_query = earned_stars_query.filter(
+                            Event.child_profile_uuid == uuid)
+                        total_stars_query = total_stars_query.filter(
+                            Assignment.child_profile_uuid == uuid)
                         total_earned_query = total_earned_query.filter(
                             Event.child_profile_uuid == uuid)
 
+                    earned_stars = earned_stars_query.count()
                     total_earned = total_earned_query.scalar() or 0
+                    total_stars = total_stars_query.count()
 
                     day_data['stars'].append({
                         'section_title': section.title,
