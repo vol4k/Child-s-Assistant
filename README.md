@@ -159,3 +159,8 @@ _Fig. 5: Example of сhild's Money-Maker screen._
 ### Contact
 
 If you notice any bugs, or have suggestions for improvement or new features, feel free to reach out via any of the available contact methods.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vol4k)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/vol4k_)
+[![Facebook](https://img.shields.io/badge/Facebook-3b5998?style=flat-square&logo=facebook&logoColor=white)](https://www.facebook.com/vol4k)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vol4k)
