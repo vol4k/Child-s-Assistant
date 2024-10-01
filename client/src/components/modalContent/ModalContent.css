@@ -3,6 +3,7 @@
   flex-direction: column;
   text-align: center;
   padding-block: 50px;
+  max-width: 768px;
 }
 
 .modalContainer .carousel {
