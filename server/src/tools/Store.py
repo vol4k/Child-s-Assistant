@@ -17,7 +17,7 @@ import os
 import uuid
 
 
-from sqlalchemy import Float, cast, create_engine, func, or_, and_
+from sqlalchemy import Float, cast, create_engine, distinct, func, or_, and_
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy_utils import database_exists, create_database
 from sqlalchemy.exc import SQLAlchemyError
@@ -423,13 +423,24 @@ class Store:
                         Task.start_date < current_date + timedelta(days=1)
                     ).count()
 
-                    total_earned = session.query(func.coalesce(func.sum(cast(Task.revard, Float)), 0)).select_from(Event).join(Task, Event.task_uuid == Task.uuid).filter(
+                    total_earned_query = session.query(
+                        func.coalesce(
+                            func.sum(func.cast(func.nullif(Task.revard, ''), Float)), 0)
+                    ).select_from(Event).join(
+                        Task, Event.task_uuid == Task.uuid
+                    ).filter(
                         Task.uuid.in_(
                             money_tasks.with_entities(Task.uuid).filter(
                                 Task.section_uuid == section.uuid
                             )
                         )
-                    ).scalar() or 0
+                    )
+
+                    if uuid:
+                        total_earned_query = total_earned_query.filter(
+                            Event.child_profile_uuid == uuid)
+
+                    total_earned = total_earned_query.scalar() or 0
 
                     day_data['stars'].append({
                         'section_title': section.title,

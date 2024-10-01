@@ -129,8 +129,6 @@ function getTasksWithFilters(filters?: {
     body: bodyEntry,
   }
 
-  console.log(bodyEntry)
-
   return makeRequest(endpoint, options).then((response: TaskDataRestList) =>
     convertTaskDataRestListToTaskDataTypeList(response)
   )
